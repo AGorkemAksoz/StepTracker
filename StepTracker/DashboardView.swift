@@ -28,8 +28,8 @@ struct DashboardView: View {
                 VStack(spacing: 20) {
                     
                     Picker("Selected Metric", selection: $selectedMetric) {
-                        ForEach(HealtMetricContext.allCases) { metric in
-                            Text(metric.title).tag(metric)
+                        ForEach(HealtMetricContext.allCases) {
+                            Text($0.title)
                         }
                     }
                     .pickerStyle(.segmented)
@@ -73,7 +73,6 @@ struct DashboardView: View {
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
-                        
                         RoundedRectangle(cornerRadius: 12)
                             .foregroundStyle(.secondary)
                             .frame(height: 240)
