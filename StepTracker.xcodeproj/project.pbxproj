@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD251EB22CEA3EEA007C3D6F /* HealtDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD251EB12CEA3EEA007C3D6F /* HealtDataListView.swift */; };
 		DE22A1D92CE787BD0045A040 /* StepTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */; };
-		DE22A1DB2CE787BD0045A040 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE22A1DA2CE787BD0045A040 /* ContentView.swift */; };
+		DE22A1DB2CE787BD0045A040 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE22A1DA2CE787BD0045A040 /* DashboardView.swift */; };
 		DE22A1DD2CE787BF0045A040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE22A1DC2CE787BF0045A040 /* Assets.xcassets */; };
 		DE22A1E02CE787BF0045A040 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE22A1DF2CE787BF0045A040 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD251EB12CEA3EEA007C3D6F /* HealtDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealtDataListView.swift; sourceTree = "<group>"; };
 		DE22A1D52CE787BD0045A040 /* StepTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerApp.swift; sourceTree = "<group>"; };
-		DE22A1DA2CE787BD0045A040 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE22A1DA2CE787BD0045A040 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		DE22A1DC2CE787BF0045A040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE22A1DF2CE787BF0045A040 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */,
-				DE22A1DA2CE787BD0045A040 /* ContentView.swift */,
+				DE22A1DA2CE787BD0045A040 /* DashboardView.swift */,
+				DD251EB12CEA3EEA007C3D6F /* HealtDataListView.swift */,
 				DE22A1DC2CE787BF0045A040 /* Assets.xcassets */,
 				DE22A1DE2CE787BF0045A040 /* Preview Content */,
 			);
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE22A1DB2CE787BD0045A040 /* ContentView.swift in Sources */,
+				DE22A1DB2CE787BD0045A040 /* DashboardView.swift in Sources */,
 				DE22A1D92CE787BD0045A040 /* StepTrackerApp.swift in Sources */,
+				DD251EB22CEA3EEA007C3D6F /* HealtDataListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +276,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StepTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = JKQNUCPDQL;
+				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -301,7 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StepTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = JKQNUCPDQL;
+				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
