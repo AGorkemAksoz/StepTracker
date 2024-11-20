@@ -83,9 +83,6 @@ struct DashboardView: View {
                     .padding()
                     .onAppear{ isShowingPermissionPrmiingSheet = !hasSeenPermissionPrimining
                     }
-                    .task {
-                        await hkManager.addSimulatorData()
-                    }
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color(.secondarySystemBackground)))
                 }
             }
