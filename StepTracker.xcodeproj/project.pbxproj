@@ -62,10 +62,10 @@
 				DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */,
 				DE22A1DA2CE787BD0045A040 /* DashboardView.swift */,
 				DD251EB12CEA3EEA007C3D6F /* HealtDataListView.swift */,
+				DD251EB62CEBB36F007C3D6F /* HealtKitManager.swift */,
 				DD251EB32CEBAEA2007C3D6F /* HealtKitPermissionPrmingView.swift */,
 				DE22A1DC2CE787BF0045A040 /* Assets.xcassets */,
 				DE22A1DE2CE787BF0045A040 /* Preview Content */,
-				DD251EB62CEBB36F007C3D6F /* HealtKitManager.swift */,
 			);
 			path = StepTracker;
 			sourceTree = "<group>";

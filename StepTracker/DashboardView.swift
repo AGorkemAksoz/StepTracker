@@ -20,6 +20,7 @@ enum HealtMetricContext: CaseIterable, Identifiable {
 }
 
 struct DashboardView: View {
+    @Environment(HealtKitManager.self) private var hkManager
     @AppStorage("hasSeenPermissinPriminig") private var hasSeenPermissionPrimining: Bool = false
     @State private var isShowingPermissionPrmiingSheet: Bool = false
     @State private var selectedMetric: HealtMetricContext = .steps
@@ -80,7 +81,11 @@ struct DashboardView: View {
                             .frame(height: 240)
                     }
                     .padding()
-                    .onAppear{ isShowingPermissionPrmiingSheet = !hasSeenPermissionPrimining }
+                    .onAppear{ isShowingPermissionPrmiingSheet = !hasSeenPermissionPrimining
+                    }
+                    .task {
+                        await hkManager.addSimulatorData()
+                    }
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color(.secondarySystemBackground)))
                 }
             }
