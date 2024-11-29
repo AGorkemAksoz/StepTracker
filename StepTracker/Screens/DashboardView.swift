@@ -42,27 +42,12 @@ struct DashboardView: View {
                     
                     StepBarChart(selectedStat: selectedMetric, chartData: hkManager.stepData)
                     
-                    VStack(alignment: .leading) {
-                        VStack {
-                            Label("Averages", systemImage: "calendar")
-                                .font(.title3).bold()
-                                .foregroundStyle(.pink)
-                            
-                            Text("Last 28 Days")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                        RoundedRectangle(cornerRadius: 12)
-                            .foregroundStyle(.secondary)
-                            .frame(height: 240)
-                    }
-                    .padding()
-                    .onAppear{ isShowingPermissionPrmiingSheet = !hasSeenPermissionPrimining
-                    }
-                    .background(RoundedRectangle(cornerRadius: 12).fill(Color(.secondarySystemBackground)))
+                    StepPieChart(chartData: ChartMath.averageWeekdayCount(for: hkManager.stepData))
                 }
             }
             .padding()
+            .onAppear{ isShowingPermissionPrmiingSheet = !hasSeenPermissionPrimining
+            }
             .task {
                 await hkManager.fetchStepCount()
             }
