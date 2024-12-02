@@ -56,7 +56,7 @@ struct StepBarChart: View {
             Chart {
                 
                 if let selectedHealtMetric {
-                    RuleMark(x: .value("Selected Metrick", selectedHealtMetric.date, unit: .day))
+                    RuleMark(x: .value("Selected Metric", selectedHealtMetric.date, unit: .day))
                         .foregroundStyle(Color.secondary.opacity(0.3))
                         .offset(y: -10)
                         .annotation(position: .top,

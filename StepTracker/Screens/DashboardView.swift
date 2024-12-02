@@ -33,16 +33,21 @@ struct DashboardView: View {
             ScrollView{
                 VStack(spacing: 20) {
                     
-                    Picker("Selected Metric", selection: $selectedMetric) {
+                    Picker("Selected Metric", selection: $selectedMetric.animation(.easeIn)) {
                         ForEach(HealtMetricContext.allCases) {
                             Text($0.title)
                         }
                     }
                     .pickerStyle(.segmented)
                     
-                    StepBarChart(selectedStat: selectedMetric, chartData: hkManager.stepData)
+                    switch selectedMetric {
+                    case .steps:
+                        StepBarChart(selectedStat: selectedMetric, chartData: hkManager.stepData)
+                        StepPieChart(chartData: ChartMath.averageWeekdayCount(for: hkManager.stepData))
+                    case .weight:
+                        WeightLineChart(selectedStat: selectedMetric, chartData: hkManager.weightData)
+                    }
                     
-                    StepPieChart(chartData: ChartMath.averageWeekdayCount(for: hkManager.stepData))
                 }
             }
             .padding()
@@ -50,6 +55,7 @@ struct DashboardView: View {
             }
             .task {
                 await hkManager.fetchStepCount()
+                await hkManager.fetchWeights()
             }
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealtMetricContext.self) { metric in
