@@ -9,18 +9,24 @@ import SwiftUI
 
 struct HealtDataListView: View {
     
+    @Environment(HealtKitManager.self) private var hkManager
     @State private var isShowingAddData: Bool = false
     @State private var addDataDate: Date = .now
     @State private var valueToAdd: String = ""
     
     var metric: HealtMetricContext
     var isSteps: Bool { metric == .steps }
+    
+    var listData: [HealthMetric] {
+        isSteps ? hkManager.stepData : hkManager.weightData
+    }
+    
     var body: some View {
-        List(0..<28) { i in
+        List(listData.reversed()) { data in
             HStack {
-                Text(Date(), format: .dateTime.month().day().year())
+                Text(data.date, format: .dateTime.month().day().year())
                 Spacer()
-                Text(10000, format: .number.precision(.fractionLength(isSteps ? 0 : 1)))
+                Text(data.value, format: .number.precision(.fractionLength(isSteps ? 0 : 1)))
             }
         }
         .navigationTitle(metric.title)
@@ -32,7 +38,6 @@ struct HealtDataListView: View {
                 isShowingAddData = true
             }
         }
-        
     }
 }
 
@@ -61,7 +66,19 @@ extension HealtDataListView {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add Data") {
-                        // TODO: Code here later
+                        Task {
+                            switch metric {
+                            case .steps:
+                                await hkManager.addStepData(for: addDataDate, value: Double(valueToAdd)!)
+                                await hkManager.fetchStepCount()
+                                isShowingAddData = false
+                            case .weight:
+                                await hkManager.addWeightData(for: addDataDate, value: Double(valueToAdd)!)
+                                await hkManager.fetchWeights()
+                                await hkManager.fetchWeightsForDifferentials()
+                                isShowingAddData = false
+                            }
+                        }
                     }
                 }
             }
@@ -71,4 +88,5 @@ extension HealtDataListView {
 
 #Preview {
     HealtDataListView(metric: .steps)
+        .environment(HealtKitManager())
 }
