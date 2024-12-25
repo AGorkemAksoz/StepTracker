@@ -23,6 +23,8 @@ struct DashboardView: View {
     @Environment(HealtKitManager.self) private var hkManager
     @State private var isShowingPermissionPrmiingSheet: Bool = false
     @State private var selectedMetric: HealtMetricContext = .steps
+    @State private var isShowingAlert: Bool = false
+    @State private var fetchError: STError = .noData
     
     var isSteps: Bool { selectedMetric == .steps }
    
@@ -58,9 +60,11 @@ struct DashboardView: View {
                 } catch STError.authNotDetermined {
                     isShowingPermissionPrmiingSheet = true
                 } catch STError.noData {
-                    print("❌ No Data Error")
+                    fetchError = .noData
+                    isShowingAlert = true
                 } catch {
-                    print("❌ Unable to complete request")
+                    fetchError = .unableToCompleteRequest
+                    isShowingAlert = true
                 }
             }
             .navigationTitle("Dashboard")
@@ -72,6 +76,11 @@ struct DashboardView: View {
             } content: {
                 HealtKitPermissionPrmingView()
             }
+            .alert(isPresented: $isShowingAlert, error: fetchError, actions: { fetchedError in
+                // Actions
+            }, message: { fetchedError in
+                Text(fetchedError.failureReason!)
+            })
         }
         .tint(isSteps ? .pink : .indigo)
     }

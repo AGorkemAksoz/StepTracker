@@ -13,6 +13,8 @@ struct HealtDataListView: View {
     @State private var isShowingAddData: Bool = false
     @State private var addDataDate: Date = .now
     @State private var valueToAdd: String = ""
+    @State private var isShowingAlert: Bool = false
+    @State private var writeError: STError = .noData
     
     var metric: HealtMetricContext
     var isSteps: Bool { metric == .steps }
@@ -57,6 +59,20 @@ extension HealtDataListView {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(metric.title)
+            .alert(isPresented: $isShowingAlert, error: writeError, actions: { writtenError in
+                switch writtenError {
+                case .authNotDetermined, .noData, .unableToCompleteRequest:
+                    EmptyView()
+                case .sharingDenied(_):
+                    Button("Settings") {
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                    }
+                    
+                    Button("Cancel", role: .cancel) { }
+                }
+            }, message: { writtenError in
+                Text(writeError.failureReason!)
+            })
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Dismiss") {
@@ -74,9 +90,11 @@ extension HealtDataListView {
                                     try await hkManager.fetchStepCount()
                                     isShowingAddData = false
                                 } catch STError.sharingDenied(let quantityType) {
-                                    print("❌ Sharing Denied for", quantityType)
+                                    writeError = .sharingDenied(quantityType: quantityType)
+                                    isShowingAlert = true
                                 } catch {
-                                    print("❌ Data List View Unable To complete request")
+                                    writeError = .unableToCompleteRequest
+                                    isShowingAlert = true
                                 }
                             case .weight:
                                 do {
@@ -85,9 +103,11 @@ extension HealtDataListView {
                                     try await hkManager.fetchWeightsForDifferentials()
                                     isShowingAddData = false
                                 } catch STError.sharingDenied(let quantityType) {
-                                    print("❌ Sharing Denied for", quantityType)
+                                    writeError = .sharingDenied(quantityType: quantityType)
+                                    isShowingAlert = true
                                 } catch {
-                                    print("❌ Data List View Unable To complete request")
+                                    writeError = .unableToCompleteRequest
+                                    isShowingAlert = true
                                 }
                             }
                         }

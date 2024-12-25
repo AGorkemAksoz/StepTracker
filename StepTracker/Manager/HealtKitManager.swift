@@ -9,11 +9,37 @@ import Foundation
 import HealthKitUI
 import Observation
 
-enum STError: Error {
+enum STError: LocalizedError {
     case authNotDetermined
     case sharingDenied(quantityType: String)
     case noData
-    case unableToComplateRequest
+    case unableToCompleteRequest
+    
+    var errorDescription: String? {
+        switch self {
+        case .authNotDetermined:
+            "Need Access to Healt Data"
+        case .sharingDenied(_):
+            "No Write Access"
+        case .noData:
+            "No Data"
+        case .unableToCompleteRequest:
+            "Unable To Complete Request"
+        }
+    }
+    
+    var failureReason: String? {
+        switch self {
+        case .authNotDetermined:
+            "You have not given access to your Health data. Please go to Settings > Health > Data Access & Devices."
+        case .sharingDenied(let quantityType):
+            "You have denied access to upload your \(quantityType) data. \n\nYou can change this in Settings > Health > Data Access & Devices."
+        case .noData:
+            "There is no data for this Health statistic."
+        case .unableToCompleteRequest:
+            "We are unable to complete your request at this time.\n\nPlease try again later or contact support."
+        }
+    }
 }
 
 @Observable class HealtKitManager {
@@ -50,7 +76,7 @@ enum STError: Error {
         } catch HKError.errorNoData {
             throw STError.noData
         } catch {
-            throw STError.unableToComplateRequest
+            throw STError.unableToCompleteRequest
         }
     }
     
@@ -78,7 +104,7 @@ enum STError: Error {
         } catch HKError.errorNoData {
             throw STError.noData
         } catch {
-            throw STError.unableToComplateRequest
+            throw STError.unableToCompleteRequest
         }
     }
     
@@ -106,7 +132,7 @@ enum STError: Error {
         } catch HKError.errorNoData {
             throw STError.noData
         } catch {
-            throw STError.unableToComplateRequest
+            throw STError.unableToCompleteRequest
         }
     }
     
@@ -132,7 +158,7 @@ enum STError: Error {
         do {
             try await store.save(stepSample)
         } catch {
-            throw STError.unableToComplateRequest
+            throw STError.unableToCompleteRequest
         }
     }
     
@@ -158,7 +184,7 @@ enum STError: Error {
         do {
             try await store.save(weightSample)
         } catch {
-            throw STError.unableToComplateRequest
+            throw STError.unableToCompleteRequest
         }
     }
     
