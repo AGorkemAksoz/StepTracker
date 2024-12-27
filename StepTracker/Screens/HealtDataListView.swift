@@ -61,7 +61,7 @@ extension HealtDataListView {
             .navigationTitle(metric.title)
             .alert(isPresented: $isShowingAlert, error: writeError, actions: { writtenError in
                 switch writtenError {
-                case .authNotDetermined, .noData, .unableToCompleteRequest:
+                case .authNotDetermined, .noData, .unableToCompleteRequest, .invalidValue:
                     EmptyView()
                 case .sharingDenied(_):
                     Button("Settings") {
@@ -82,11 +82,17 @@ extension HealtDataListView {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add Data") {
+                        guard let value = Double(valueToAdd) else {
+                            writeError = .invalidValue
+                            isShowingAlert = true
+                            valueToAdd = ""
+                            return
+                        }
                         Task {
                             switch metric {
                             case .steps:
                                 do {
-                                    try await hkManager.addStepData(for: addDataDate, value: Double(valueToAdd)!)
+                                    try await hkManager.addStepData(for: addDataDate, value: value)
                                     try await hkManager.fetchStepCount()
                                     isShowingAddData = false
                                 } catch STError.sharingDenied(let quantityType) {
@@ -98,7 +104,7 @@ extension HealtDataListView {
                                 }
                             case .weight:
                                 do {
-                                    try await hkManager.addWeightData(for: addDataDate, value: Double(valueToAdd)!)
+                                    try await hkManager.addWeightData(for: addDataDate, value: value)
                                     try await hkManager.fetchWeights()
                                     try await hkManager.fetchWeightsForDifferentials()
                                     isShowingAddData = false
