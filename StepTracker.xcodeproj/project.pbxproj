@@ -24,6 +24,7 @@
 		DE869F3A2CF5E14900ED2C46 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F392CF5E14900ED2C46 /* Date+Ext.swift */; };
 		DE869F3D2CF5E2EB00ED2C46 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DE869F3C2CF5E2EB00ED2C46 /* Algorithms */; };
 		DE869F592CF9CFDB00ED2C46 /* StepPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F582CF9CFDB00ED2C46 /* StepPieChart.swift */; };
+		DEC2ACA42D1EC2E1003A876A /* ChartEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACA32D1EC2E1003A876A /* ChartEmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		DE869F362CF5E0BD00ED2C46 /* ChartDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataTypes.swift; sourceTree = "<group>"; };
 		DE869F392CF5E14900ED2C46 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		DE869F582CF9CFDB00ED2C46 /* StepPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepPieChart.swift; sourceTree = "<group>"; };
+		DEC2ACA32D1EC2E1003A876A /* ChartEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartEmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				DE869F582CF9CFDB00ED2C46 /* StepPieChart.swift */,
 				DDCEA3FE2CFB43BA005C8513 /* WeightLineChart.swift */,
 				DDE543C02D021FAC007BA8B6 /* WeightDiffBarChart.swift */,
+				DEC2ACA32D1EC2E1003A876A /* ChartEmptyView.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				DE22A1DB2CE787BD0045A040 /* DashboardView.swift in Sources */,
 				DE869F2F2CF5D92200ED2C46 /* StepBarChart.swift in Sources */,
 				DDCEA4022CFB4542005C8513 /* MockData.swift in Sources */,
+				DEC2ACA42D1EC2E1003A876A /* ChartEmptyView.swift in Sources */,
 				DD251EB72CEBB36F007C3D6F /* HealtKitManager.swift in Sources */,
 				DE22A1D92CE787BD0045A040 /* StepTrackerApp.swift in Sources */,
 				DD251EB22CEA3EEA007C3D6F /* HealtDataListView.swift in Sources */,
@@ -379,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StepTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JKQNUCPDQL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The app show your step and weight data in an interactive chart.";
@@ -411,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StepTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JKQNUCPDQL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The app show your step and weight data in an interactive chart.";
