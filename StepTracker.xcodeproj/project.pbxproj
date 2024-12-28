@@ -14,6 +14,8 @@
 		DDCEA4022CFB4542005C8513 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCEA4012CFB4542005C8513 /* MockData.swift */; };
 		DDE543C12D021FAC007BA8B6 /* WeightDiffBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE543C02D021FAC007BA8B6 /* WeightDiffBarChart.swift */; };
 		DDE543C32D202A72007BA8B6 /* ChartContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE543C22D202A72007BA8B6 /* ChartContainer.swift */; };
+		DDE543C52D2034FE007BA8B6 /* ChartHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE543C42D2034FE007BA8B6 /* ChartHelper.swift */; };
+		DDE543C72D203A38007BA8B6 /* ChartAnnonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE543C62D203A38007BA8B6 /* ChartAnnonationView.swift */; };
 		DE22A1D92CE787BD0045A040 /* StepTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */; };
 		DE22A1DB2CE787BD0045A040 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE22A1DA2CE787BD0045A040 /* DashboardView.swift */; };
 		DE22A1DD2CE787BF0045A040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE22A1DC2CE787BF0045A040 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		DDCEA4012CFB4542005C8513 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		DDE543C02D021FAC007BA8B6 /* WeightDiffBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDiffBarChart.swift; sourceTree = "<group>"; };
 		DDE543C22D202A72007BA8B6 /* ChartContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainer.swift; sourceTree = "<group>"; };
+		DDE543C42D2034FE007BA8B6 /* ChartHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartHelper.swift; sourceTree = "<group>"; };
+		DDE543C62D203A38007BA8B6 /* ChartAnnonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAnnonationView.swift; sourceTree = "<group>"; };
 		DE22A1D52CE787BD0045A040 /* StepTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerApp.swift; sourceTree = "<group>"; };
 		DE22A1DA2CE787BD0045A040 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				DDE543C02D021FAC007BA8B6 /* WeightDiffBarChart.swift */,
 				DEC2ACA32D1EC2E1003A876A /* ChartEmptyView.swift */,
 				DDE543C22D202A72007BA8B6 /* ChartContainer.swift */,
+				DDE543C42D2034FE007BA8B6 /* ChartHelper.swift */,
+				DDE543C62D203A38007BA8B6 /* ChartAnnonationView.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -243,10 +249,12 @@
 				DE869F2F2CF5D92200ED2C46 /* StepBarChart.swift in Sources */,
 				DDE543C32D202A72007BA8B6 /* ChartContainer.swift in Sources */,
 				DDCEA4022CFB4542005C8513 /* MockData.swift in Sources */,
+				DDE543C72D203A38007BA8B6 /* ChartAnnonationView.swift in Sources */,
 				DEC2ACA42D1EC2E1003A876A /* ChartEmptyView.swift in Sources */,
 				DD251EB72CEBB36F007C3D6F /* HealtKitManager.swift in Sources */,
 				DE22A1D92CE787BD0045A040 /* StepTrackerApp.swift in Sources */,
 				DD251EB22CEA3EEA007C3D6F /* HealtDataListView.swift in Sources */,
+				DDE543C52D2034FE007BA8B6 /* ChartHelper.swift in Sources */,
 				DE869F352CF5E08600ED2C46 /* ChartMath.swift in Sources */,
 				DE869F2D2CF48E0400ED2C46 /* HealthMetric.swift in Sources */,
 				DE869F372CF5E0BD00ED2C46 /* ChartDataTypes.swift in Sources */,

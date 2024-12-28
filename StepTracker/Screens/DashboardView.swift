@@ -42,10 +42,10 @@ struct DashboardView: View {
                     
                     switch selectedMetric {
                     case .steps:
-                        StepBarChart(selectedStat: selectedMetric, chartData: hkManager.stepData)
+                        StepBarChart(chartData: ChartHelper.convert(data: hkManager.stepData))
                         StepPieChart(chartData: ChartMath.averageWeekdayCount(for: hkManager.stepData))
                     case .weight:
-                        WeightLineChart(selectedStat: selectedMetric, chartData: hkManager.weightData)
+                        WeightLineChart(chartData: ChartHelper.convert(data: hkManager.weightData))
                         WeightDiffBarChart(chartData: ChartMath.averageDailyWeightDiffs(for: hkManager.weightDiffData))
                     }
                     
