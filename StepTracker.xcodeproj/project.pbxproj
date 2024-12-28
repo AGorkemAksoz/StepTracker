@@ -13,6 +13,7 @@
 		DDCEA3FF2CFB43BA005C8513 /* WeightLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCEA3FE2CFB43BA005C8513 /* WeightLineChart.swift */; };
 		DDCEA4022CFB4542005C8513 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCEA4012CFB4542005C8513 /* MockData.swift */; };
 		DDE543C12D021FAC007BA8B6 /* WeightDiffBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE543C02D021FAC007BA8B6 /* WeightDiffBarChart.swift */; };
+		DDE543C32D202A72007BA8B6 /* ChartContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE543C22D202A72007BA8B6 /* ChartContainer.swift */; };
 		DE22A1D92CE787BD0045A040 /* StepTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */; };
 		DE22A1DB2CE787BD0045A040 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE22A1DA2CE787BD0045A040 /* DashboardView.swift */; };
 		DE22A1DD2CE787BF0045A040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE22A1DC2CE787BF0045A040 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		DDCEA3FE2CFB43BA005C8513 /* WeightLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLineChart.swift; sourceTree = "<group>"; };
 		DDCEA4012CFB4542005C8513 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		DDE543C02D021FAC007BA8B6 /* WeightDiffBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDiffBarChart.swift; sourceTree = "<group>"; };
+		DDE543C22D202A72007BA8B6 /* ChartContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainer.swift; sourceTree = "<group>"; };
 		DE22A1D52CE787BD0045A040 /* StepTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE22A1D82CE787BD0045A040 /* StepTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerApp.swift; sourceTree = "<group>"; };
 		DE22A1DA2CE787BD0045A040 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				DDCEA3FE2CFB43BA005C8513 /* WeightLineChart.swift */,
 				DDE543C02D021FAC007BA8B6 /* WeightDiffBarChart.swift */,
 				DEC2ACA32D1EC2E1003A876A /* ChartEmptyView.swift */,
+				DDE543C22D202A72007BA8B6 /* ChartContainer.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				DDE543C12D021FAC007BA8B6 /* WeightDiffBarChart.swift in Sources */,
 				DE22A1DB2CE787BD0045A040 /* DashboardView.swift in Sources */,
 				DE869F2F2CF5D92200ED2C46 /* StepBarChart.swift in Sources */,
+				DDE543C32D202A72007BA8B6 /* ChartContainer.swift in Sources */,
 				DDCEA4022CFB4542005C8513 /* MockData.swift in Sources */,
 				DEC2ACA42D1EC2E1003A876A /* ChartEmptyView.swift in Sources */,
 				DD251EB72CEBB36F007C3D6F /* HealtKitManager.swift in Sources */,
@@ -383,7 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StepTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = JKQNUCPDQL;
+				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The app show your step and weight data in an interactive chart.";
@@ -415,7 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StepTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = JKQNUCPDQL;
+				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The app show your step and weight data in an interactive chart.";
