@@ -29,6 +29,7 @@
 		DE869F592CF9CFDB00ED2C46 /* StepPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F582CF9CFDB00ED2C46 /* StepPieChart.swift */; };
 		DEC2ACA42D1EC2E1003A876A /* ChartEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACA32D1EC2E1003A876A /* ChartEmptyView.swift */; };
 		DEC2ACA62D22D8D7003A876A /* STError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACA52D22D8D7003A876A /* STError.swift */; };
+		DEC2ACA82D22E75E003A876A /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACA72D22E75E003A876A /* Array+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		DE869F582CF9CFDB00ED2C46 /* StepPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepPieChart.swift; sourceTree = "<group>"; };
 		DEC2ACA32D1EC2E1003A876A /* ChartEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartEmptyView.swift; sourceTree = "<group>"; };
 		DEC2ACA52D22D8D7003A876A /* STError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STError.swift; sourceTree = "<group>"; };
+		DEC2ACA72D22E75E003A876A /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				DE869F392CF5E14900ED2C46 /* Date+Ext.swift */,
+				DEC2ACA72D22E75E003A876A /* Array+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				DE869F2D2CF48E0400ED2C46 /* HealthMetric.swift in Sources */,
 				DE869F372CF5E0BD00ED2C46 /* ChartDataTypes.swift in Sources */,
 				DE869F592CF9CFDB00ED2C46 /* StepPieChart.swift in Sources */,
+				DEC2ACA82D22E75E003A876A /* Array+Ext.swift in Sources */,
 				DDCEA3FF2CFB43BA005C8513 /* WeightLineChart.swift in Sources */,
 				DE869F3A2CF5E14900ED2C46 /* Date+Ext.swift in Sources */,
 			);
